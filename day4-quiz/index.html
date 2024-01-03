@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 4 - Mini Quiz</title>
+  <link rel="stylesheet" href="./src/index.css" />
+  <script src="./src/index.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="title">
+      <h1>Day 4 - Mini Quiz</h1>
+    </header>
+    <section class="quizBox" id="quizBox1">
+      <div class="quizContents">
+        <p class="quizContents__title">Quiz 1.</p>
+        <p class="quizContents__content">
+          <em class="quote">
+            "기본적으로 css는 부모 요소에 지정한 속성값을 자식 요소에게도
+            <span class="emptyBox"> </span> 해서 적용합니다."
+          </em>
+          <br />
+          빈 칸에 들어갈 알맞은 단어를 입력하고 정답 입력 버튼을 눌러주세요.
+          (Hint: inherit)
+        </p>
+      </div>
+      <div class="quizInput">
+        <input type="text" id="quiz1" placeholder="이 곳에 정답을 입력해주세요." />
+        <button class="quizBtn" type="button" onclick="clickSubmitBtn('1')">
+          정답 입력
+        </button>
+      </div>
+      <div class="quizResultStr" id="quizResultStr1">
+        <span id="resultStr1">퀴즈를 풀어보세요!</span>
+      </div>
+    </section>
+    <section class="quizBox" id="quizBox2">
+      <div class="quizContents">
+        <p class="quizContents__title">Quiz 2.</p>
+        <p class="quizContents__content">
+          <em class="quote">
+            "웹폰트를 사용하는 방법에는 크게 두 가지가 있습니다. 첫번째 방법은
+            @font-face를 이용하는 방법이고, 두 번째는
+            <span class="emptyBox"> </span> 를 이용하는 방법입니다."
+          </em>
+          <br />
+          빈 칸에 들어갈 알맞은 단어를 입력하고 정답 입력 버튼을 눌러주세요.
+        </p>
+      </div>
+      <div class="quizInput">
+        <input type="text" id="quiz2" placeholder="이 곳에 정답을 입력해주세요." />
+        <button class="quizBtn" type="button" onclick="clickSubmitBtn('2')">
+          정답 입력
+        </button>
+      </div>
+      <div class="quizResultStr" id="quizResultStr2">
+        <span id="resultStr2">퀴즈를 풀어보세요!</span>
+      </div>
+    </section>
+    <section class="quizBox" id="quizBox3">
+      <div class="quizContents">
+        <p class="quizContents__title">Quiz 3.</p>
+        <p class="quizContents__content">
+          <em class="quote">
+            &lt;div&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="text1"&gt;이 텍스트에
+            밑줄을 추가해보세요.&lt;/span&gt;<br />
+            &lt;/div&gt;
+          </em>
+          <em class="quote">
+            .text1 {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="emptyBox" style="width: 300px">
+            </span><br />
+            }
+          </em>
+          <br />
+          위와 같은 html 구조에서 텍스트만 선택해서 밑줄을 추가하는 css 구문을
+          작성하려고 합니다.<br />빈 칸에 들어갈 알맞은 css 선언을
+          작성해주세요.
+        </p>
+      </div>
+      <div class="quizInput">
+        <input type="text" id="quiz3" placeholder="이 곳에 정답을 입력해주세요." />
+        <button class="quizBtn" type="button" onclick="clickSubmitBtn('3')">
+          정답 입력
+        </button>
+      </div>
+      <div class="quizResultStr" id="quizResultStr3">
+        <span id="resultStr3">퀴즈를 풀어보세요!</span>
+      </div>
+    </section>
+    <section class="quizBox" id="quizBox4">
+      <div class="quizContents">
+        <p class="quizContents__title">Quiz 4.</p>
+        <p class="quizContents__content">
+          <em class="quote">
+            &lt;div class="box1"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="text1"&gt;이 박스의 세로
+            사이즈는 몇 px일까요?&lt;/div&gt;<br />
+            &lt;/div&gt;
+          </em>
+          <em class="quote">
+            .box1 {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid black;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px 20px;<br />
+            }<br />
+            .text1 {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 24px;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 3em;<br />
+            }
+          </em>
+          <br />
+          위와 같은 HTML/CSS가 있습니다.<br />
+          text1이라는 클래스를 가진 div의 세로 사이즈는 어떻게 될까요?
+        </p>
+      </div>
+      <div class="quizInput">
+        <input type="text" id="quiz4" placeholder="이 곳에 정답을 입력해주세요." />
+        <button class="quizBtn" type="button" onclick="clickSubmitBtn('4')">
+          정답 입력
+        </button>
+      </div>
+      <div class="quizResultStr" id="quizResultStr4">
+        <span id="resultStr4">퀴즈를 풀어보세요!</span>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

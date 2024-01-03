@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --main-color: #e0e5ec;
+  --main-color2: #c2cbd9;
+  --main-color3: #a3b1c6;
+  --main-text: #3973ca;
+  --main-text2: #1b56ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--main-color);
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 90%;
+  max-width: 720px;
+  text-align: center;
+  border-radius: 50px;
+  background: var(--main-color);
+  box-shadow: 10px 10px 20px var(--main-color2), -10px -10px 20px #ffffff;
+  color: var(--main-text);
+  margin-bottom: 40px;
+}
+
+.title h1 {
+  font-size: 28px;
+  font-family: "ONE-Mobile-POP", "돋움", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.quizBox {
+  width: 90%;
+  max-width: 720px;
+  box-shadow: 10px 10px 20px var(--main-color2), -10px -10px 20px #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.quizBox.red {
+  animation: fadeRed 3s ease-in-out;
+}
+
+.quizBox.blue {
+  animation: fadeBlue 3s ease-in-out;
+}
+
+@keyframes fadeRed {
+  from {
+    background: rgb(243, 100, 100);
+  }
+  to {
+    background: var(--main-color);
+  }
+}
+
+@keyframes fadeBlue {
+  from {
+    background: rgb(94, 117, 227);
+  }
+  to {
+    background: var(--main-color);
+  }
+}
+
+.quizContents {
+  margin-bottom: 20px;
+}
+
+.quizContents__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--main-text);
+  font-family: "ONE-Mobile-POP", "돋움", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.quizContents__content {
+  vertical-align: middle;
+  line-height: 1.8em;
+}
+
+.quote {
+  width: 100%;
+  display: inline-block;
+  font-style: normal;
+  border: 1px solid var(--main-color1);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: white;
+  overflow-wrap: break-word;
+  line-height: 1.5em;
+}
+
+.quote:last-of-type {
+  margin-bottom: 20px;
+}
+
+.emptyBox {
+  display: inline-block;
+  background: white;
+  width: 70px;
+  height: 24px;
+  margin: 0 0 -5px 0;
+  border: 1px solid var(--main-color2);
+}
+
+.quizInput {
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quizInput input {
+  width: calc(100% - 150px);
+  height: 100%;
+  border: 1px solid var(--main-color2);
+  border-radius: 5px;
+  background: white;
+  padding: 10px;
+}
+
+.quizInput input:focus {
+  outline: none;
+}
+
+.quizBtn {
+  width: 130px;
+  height: 100%;
+  background: var(--main-text);
+  color: white;
+  border: 0;
+  border-radius: 50px;
+  padding: 10px 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.quizBtn:hover,
+.quizBtn:active {
+  background: var(--main-text2);
+}
+
+.quizResultStr {
+  background-color: #979797;
+  margin-top: 20px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 7px 7px 5px;
+}
+
+.quizResultStr span {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: "ONE-Mobile-POP", "돋움", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.quizResultStr.red {
+  background: rgb(243, 100, 100);
+}
+.quizResultStr.blue {
+  background: var(--main-text);
+}

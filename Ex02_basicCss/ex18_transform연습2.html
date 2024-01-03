@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      font: bold 16px/50px "Open Sans";
+      color: white;
+      text-align: center;
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      margin-bottom: 10px;
+      transition: width 1s;
+    }
+
+    div:nth-of-type(1) {
+      transition-delay: 0s;
+    }
+
+    div:nth-of-type(2) {
+      transition-delay: 1s;
+    }
+
+    div:nth-of-type(3) {
+      transition-delay: 3s;
+    }
+
+    div:hover {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>transition-delay</h3>
+  <div>0s</div>
+  <div>1s</div>
+  <div>3s</div>
+</body>
+
+</html>
