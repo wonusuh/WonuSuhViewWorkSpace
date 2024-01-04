@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    header {
+      background-color: coral;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      display: flex;
+      flex: 8;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section #left {
+      background-color: yellow;
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section #article {
+      background-color: lightgrey;
+      flex: 8;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section #right {
+      background-color: aquamarine;
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer {
+      background-color: aqua;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media(max-width:768px) {
+      section {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <div id="left">left</div>
+      <div id="article">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos aperiam, possimus nobis
+        saepe quis autem explicabo nam ipsum tempora doloremque aut beatae ratione in ea totam neque. Dicta, nihil ut?
+
+      </div>
+      <div id="right">right</div>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>

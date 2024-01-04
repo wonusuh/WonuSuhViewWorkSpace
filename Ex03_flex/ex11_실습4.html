@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 10%;
+      height: 100vh;
+    }
+
+    section {
+      display: flex;
+    }
+
+    .content1 {
+      background-color: yellow;
+      flex: 1;
+      padding-left: 20px;
+    }
+
+    .content2 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sub1 {
+      background-color: cadetblue;
+      padding-left: 20px;
+    }
+
+    .sub2 {
+      background-color: coral;
+      padding-left: 20px;
+    }
+
+    @media(max-width: 768px) {
+      body {
+        margin: 0;
+      }
+
+      section {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article class="content1">
+      <h2>content1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur totam qui tempora error, velit delectus
+        officia veritatis voluptatem obcaecati fuga, similique, atque deserunt. Esse veniam hic, ex odit eveniet
+        obcaecati.
+        Eveniet quis consequuntur, atque nostrum esse, nobis similique mollitia recusandae perspiciatis porro ipsum?
+        Tempora ad consequuntur voluptates maiores commodi voluptatem nihil adipisci quidem enim unde, quo repellendus
+        aliquam quis cupiditate.</p>
+    </article>
+    <article class="content2">
+      <div class="sub1">
+        <h2>sub1</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quaerat ducimus laborum nulla porro quia
+          accusamus suscipit, ratione vel explicabo fugit soluta deserunt culpa temporibus error ipsam illum voluptatem
+          amet.</p>
+      </div>
+      <div class="sub2">
+        <h2>sub2</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quaerat ducimus laborum nulla porro quia
+          accusamus suscipit, ratione vel explicabo fugit soluta deserunt culpa temporibus error ipsam illum voluptatem
+          amet.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

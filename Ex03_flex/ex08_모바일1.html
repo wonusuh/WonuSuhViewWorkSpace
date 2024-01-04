@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      border: 3px solid black;
+      width: 800px;
+      display: flex;
+      /* background-color: bisque; */
+    }
+
+    .parent div {
+      height: 100px;
+      width: 100px;
+      text-align: center;
+      line-height: 100px;
+      color: #fff;
+      font-size: 2em;
+    }
+
+    .child1 {
+      background-color: royalblue;
+      flex: 1;
+    }
+
+    .child2 {
+      background-color: palevioletred;
+      flex: 8;
+    }
+
+    .child3 {
+      background-color: yellowgreen;
+      flex: 1;
+    }
+
+    /* 1. 고정적인 width : 100%로 변경
+        2. flex row -> coulmn 변경*/
+    @media(max-width: 768px) {
+      .parent {
+        width: 100%;
+        flex-direction: column-reverse;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+</body>
+
+</html>

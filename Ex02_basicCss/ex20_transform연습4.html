@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .total {
+      border: 2px solid blue;
+      padding: 20px;
+      width: 500px;
+    }
+
+    .total div {
+      width: 10px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-color: palevioletred;
+
+      transition-duration: 0.5s;
+    }
+
+    .total:hover>div {
+      width: 100%;
+    }
+
+    .box01 {
+      transition-delay: 0.8s;
+    }
+
+    .box02 {
+      transition-delay: 0.6s;
+    }
+
+    .box03 {
+      transition-delay: 0.4s;
+    }
+
+    .box04 {
+      transition-delay: 0.2s;
+    }
+
+    .box05 {
+      transition-delay: 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="total">
+    <div class="box01"></div>
+    <div class="box02"></div>
+    <div class="box03"></div>
+    <div class="box04"></div>
+    <div class="box05"></div>
+  </div>
+</body>
+
+</html>

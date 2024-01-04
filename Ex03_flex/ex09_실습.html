@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      /* background-color: red; */
+      display: flex;
+    }
+
+    .box {
+      background-color: palegreen;
+      /* margin: 5px; */
+      border: 3px solid red;
+      height: 200px;
+      flex: 1;
+    }
+
+    .box>#first {
+      height: 100%;
+      width: 50%;
+      background-color: yellow;
+    }
+
+    @media(max-width: 768px) {
+      .container {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div id="first"></div>
+      <div></div>
+    </div>
+    <div class="box">
+      <div id="first"></div>
+      <div></div>
+    </div>
+    <div class="box">
+      <div id="first"></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>
