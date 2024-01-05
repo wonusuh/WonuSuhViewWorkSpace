@@ -1,0 +1,90 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 15px;
+}
+
+section {
+  /* border: 5px solid black; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.media {
+  width: 600px;
+  display: flex;
+  background-color: lightgray;
+  align-items: center;
+}
+
+.media img {
+  margin: 10px;
+  width: 100px;
+  flex: 2;
+}
+
+.media-body {
+  padding-left: 20px;
+  flex: 5;
+}
+
+.media h3 {}
+
+.media p {}
+
+/* 모바일 환경 */
+@media screen and (max-width: 767px) {
+  section {
+    flex-direction: column;
+  }
+
+  .media {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .media img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* 태블릿 환경 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section {
+    flex-direction: column;
+  }
+
+  .media {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .media img {
+    width: 100%;
+    height: 100%;
+  }
+}
