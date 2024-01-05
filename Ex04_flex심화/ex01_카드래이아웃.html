@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      margin-top: 200px;
+    }
+
+    #card {
+      margin: 10px;
+      border: 3px solid pink;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 20%;
+    }
+
+    @media(max-width: 768px) {
+      .container {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      #card {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="card">
+      <h2>Card #01</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ex laborum veniam cum quos odio id
+        commodi fuga minus necessitatibus. Ad, aut eos hic fugit officiis vel temporibus iste officia rerum deleniti
+        itaque architecto nam laudantium magni eum eaque, ipsum asperiores debitis velit! Distinctio veniam dolor
+        repellendus neque, inventore doloribus itaque, officiis sit fuga magni quia ipsam alias veritatis saepe debitis
+        sapiente quidem impedit, nostrum quasi? Quos asperiores ipsam accusamus nesciunt recusandae inventore sint
+        soluta atque adipisci placeat, libero consequuntur molestias quidem quae ipsa obcaecati explicabo animi. Laborum
+        repellendus cupiditate minima quo soluta temporibus corporis! Id non cum rerum cumque!</p>
+      <img src="http://placehold.it/300x150" alt="temp1">
+    </div>
+    <div id="card">
+      <h2>Card #02</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium at laborum labore nesciunt soluta iure
+        minima vel nobis voluptas optio, eveniet vero corrupti omnis doloremque, itaque quisquam animi est quas neque
+        modi non. Quas blanditiis quae, tempore rerum dolore mollitia quos. Nesciunt magnam dolor ullam nisi fugiat
+        pariatur aperiam quo?</p>
+      <img src="http://placehold.it/300x150" alt="temp2">
+    </div>
+    <div id="card">
+      <h2>Card #03</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, sint. Quam repellendus placeat minus fugit
+        perspiciatis provident accusantium, fuga, a dolore magni expedita itaque laudantium!</p>
+      <img src="http://placehold.it/300x150" alt="temp3">
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 2em;
+    }
+
+    header {
+      background-color: tomato;
+      height: 100px;
+    }
+
+    section {
+      display: flex;
+      flex: 1;
+    }
+
+    nav {
+      background-color: pink;
+      width: 150px;
+    }
+
+    article {
+      background-color: beige;
+      flex: 1;
+    }
+
+    aside {
+      background-color: plum;
+      width: 150px;
+    }
+
+    footer {
+      background-color: tomato;
+      height: 100px;
+    }
+
+    header,
+    nav,
+    article,
+    aside,
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav,
+      aside {
+        width: 100%;
+        flex: 1;
+      }
+
+      article {
+        flex: 8;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>Header</header>
+    <section>
+      <nav>Nav</nav>
+      <article>Article</article>
+      <aside>Aside</aside>
+    </section>
+    <footer>Footer</footer>
+  </div>
+</body>
+
+</html>

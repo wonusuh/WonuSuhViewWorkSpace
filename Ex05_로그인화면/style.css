@@ -1,0 +1,61 @@
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+main {}
+
+.login-form {}
+
+.login-form h2 {}
+
+.sns-login {}
+
+.btn {
+  padding: 8px;
+}
+
+.btn.facebook {
+  background-color: #1877F2;
+}
+
+.btn.twitter {
+  background-color: #1DA1F2;
+}
+
+.btn.google {
+  background-color: #dd4b39;
+}
+
+.field {}
+
+.field label {}
+
+.field input {}
+
+.btn-login {}
