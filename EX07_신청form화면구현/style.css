@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  /* normal 400 bold 600  */
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+section {
+  width: 1200px;
+  /* border: 1px solid black; */
+  /* 세션을 중앙으로 만들고 싶다 요소가 한개밖에 없을때는 그냥 margin: auto*/
+  margin: auto;
+}
+
+/* header */
+.consulting-header {
+  text-align: center;
+}
+
+.consulting-header h1 {
+  font-size: 32px;
+}
+
+.consulting-header span {
+  color: crimson;
+}
+
+.consulting-header hr {
+  border: none;
+  width: 100px;
+  height: 2px;
+  background-color: skyblue;
+}
+
+/* form */
+
+.consulting-form form {
+  border-top: 5px solid #ddd;
+  margin: 30px;
+  padding: 30px;
+  /* border: 2px solid blue; */
+
+}
+
+form .row {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.row .field {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  flex: 1;
+}
+
+.row .field label {
+  margin: 5px 0;
+}
+
+.row .field input,
+select,
+textarea {
+  border: 1px solid #ddd;
+  padding: 7px;
+}
+
+.row .field input:hover,
+textarea :hover,
+select :hover {
+  border: 1px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+}
+
+.row .field input:focus,
+textarea:focus {
+  border: 1px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+}
+
+form label em {
+  color: red;
+}
+
+/* form textarea{} */
+
+/* policy */
+/* .policy{} */
+.policy h4 {
+  margin: 10px 0;
+}
+
+.policy iframe {
+  border: 1px solid black;
+  width: 100%;
+  height: 100px;
+  border-radius: 3px;
+  padding: 7px;
+  /*  iframe 외부 화면만 조절할 수 있다 : 독립존재하는 html 문서이기 때문에*/
+  /* color: red; */
+}
+
+.btn-sumbit {
+  padding: 10px 50px;
+  border-radius: 3px;
+  background-color: skyblue;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.btn-sumbit:hover {
+  background-color: royalblue;
+  color: #fff;
+}
+
+/* 모바일 환경 */
+@media screen and (max-width: 767px) {
+  section {
+    width: 100%;
+  }
+
+  .consulting-form .row {
+    flex-direction: column;
+  }
+
+  .btn-sumbit {
+    width: 100%;
+  }
+}

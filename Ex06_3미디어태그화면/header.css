@@ -1,0 +1,138 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color: rebeccapurple;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  filter: invert();
+}
+
+.gnb {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.gnb a {
+  color: white;
+}
+
+.sns {
+  display: flex;
+  width: 10%;
+  justify-content: space-between;
+}
+
+.sns i {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: auto;
+  }
+
+  nav {
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .gnb {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sns {
+    background-color: mediumpurple;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .trigger {
+    border: 2px solid black;
+    width: 25px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .trigger span {
+    background-color: bisque;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    transition: 0.3s;
+  }
+
+  .trigger span:nth-child(1) {
+    top: 0;
+  }
+
+  .trigger span:nth-child(2) {
+    top: 50%;
+  }
+
+  .trigger span:nth-child(3) {
+    top: 100%;
+  }
+
+  .gnb,
+  .sns {
+    display: none;
+  }
+
+  .gnb.on,
+  .sns.on {
+    display: flex;
+  }
+
+  .trigger.active span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  .trigger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .trigger.active span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+}
