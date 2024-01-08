@@ -1,0 +1,149 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* font-family: 'Montserrat' , sans-serif; */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: 'Montserrat' , sans-serif; */
+}
+
+/* section */
+section {
+  /* border: 1px solid black; */
+  width: 1280px;
+  margin: auto;
+}
+
+.list-header {}
+
+.list-header h1 {
+  font-size: 32px;
+}
+
+.list-header h1::after {
+  content: "\f101";
+  font-family: fontawesome;
+  margin-left: 10px;
+}
+
+.list-header p {}
+
+/* items */
+.items {
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.item {
+  /* border: 1px solid blue; */
+  /* height: 300px; */
+  flex: 1;
+  margin-right: 10px;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.item img {
+  width: 100%;
+  height: 80%;
+}
+
+.item h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.item .category {
+  font-weight: bold;
+  color: #0084ff;
+}
+
+.item p {
+  margin: 5px 0;
+}
+
+.item p .fa {
+  color: gold;
+}
+
+.item p em {
+  font-size: normal;
+}
+
+.item .price {
+  font-weight: bold;
+  color: royalblue;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.item .badge {
+  background-color: plum;
+  font-size: 14px;
+  /* margin: 10px; */
+  /* display: block; */
+  padding: 2px 8px;
+  border-radius: 4px;
+
+}
+
+.item .badge.only {
+  background-color: lightgreen;
+}
+
+@media screen and (max-width:768px) {
+  section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .items {
+    flex-direction: column;
+  }
+
+  .item {
+    margin: 30px;
+  }
+}
