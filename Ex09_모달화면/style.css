@@ -1,0 +1,196 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  /* background-color: lightgrey */
+}
+
+button,
+input,
+textarea,
+select {
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-open {
+  width: 400px;
+  height: 80px;
+  background-color: crimson;
+  color: white;
+  font-size: 36px;
+  border-radius: 10px;
+  display: block;
+  margin: 10px;
+}
+
+/* 팝업창의 위치만 조절  */
+.modal {
+  /* border: 1px solid black; */
+  /* 보이는 창 화면안에서 위치값을 조정 : 스크롤 상관 없음  */
+  position: fixed;
+  /* 항상 보이는 창에 정중앙에 위치 %50*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  /* 화면에 레이아웃이 겹칠때 레이아웃 우선순위 줄수있다 : 디폴트 0 
+   z-index 가 높을 수록 먼저 띈다 
+  */
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  /* transform 은 한 태그당 한개만 먹힘  */
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* 팝업창의 디자인 담당  */
+.modal-content {
+  /* margin: auto; */
+  /* border: 1px solid blue; */
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.modal-content>div {
+  padding: 20px;
+}
+
+.photo {
+  background: url('office.jpg') no-repeat center right;
+  /* width: 300px; */
+  /* height: 500px; */
+  background-size: cover;
+  /* 1 0 0 */
+  flex: 1;
+}
+
+.desc {
+  flex: 2;
+  text-align: center;
+}
+
+.desc-header {
+  margin: 20px 0;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  font-size: 25px;
+  background-color: transparent;
+  color: #222;
+}
+
+.btn-close:hover {
+  color: crimson;
+}
+
+.desc-content input[type=email] {
+  display: block;
+  width: 95%;
+  padding: 7px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-send {
+  display: block;
+  width: 100%;
+  background-color: crimson;
+  color: #fff;
+  padding: 7px;
+
+}
+
+.desc-content p {
+  line-height: 1.7em;
+  font-size: 15px;
+}
+
+.overlay {
+  /* 모달창에 집중하기 위해서 나머지 부분은 검은색으로 배경 지정  */
+  background-color: #00000096;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+
+  .modal-content {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .modal-content>div {
+    width: 350px;
+    /* flex: 1; */
+  }
+
+  .photo {
+    /* height: 250px; */
+    /* photo flex: 1 를 줬기 때문에 height 안먹는다 
+      flex-basis 를 사용한다 : row ==> width column : hight;
+    */
+    flex-basis: 250px;
+  }
+}

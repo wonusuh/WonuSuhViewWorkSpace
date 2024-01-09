@@ -1,0 +1,126 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+}
+
+button,
+input,
+textarea,
+select {
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  height: 400px;
+  width: 300px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card:hover .content {
+  top: 0;
+}
+
+.card:hover {
+  transform: translateY(-10%);
+  box-shadow: 10px 10px 10px black;
+}
+
+.card:nth-child(1) .content {
+  background: linear-gradient(to top, red, transparent);
+}
+
+.card:nth-child(2) .content {
+  background: linear-gradient(to top, blue, transparent);
+}
+
+.card:nth-child(3) .content {
+  background: linear-gradient(to top, yellow, transparent);
+}
+
+.card img {}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 150px;
+  transition: 0.5s;
+}
+
+.content h2 {
+  font-size: 30px;
+}
+
+.content h2 span {
+  font-size: 14px;
+  color: yellow;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
+}
+
+.sns {}
+
+.sns a {
+  color: white;
+  border: 1px solid white;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 13px;
+}

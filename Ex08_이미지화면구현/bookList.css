@@ -133,6 +133,7 @@ section {
   background-color: lightgreen;
 }
 
+/* 모바일 */
 @media screen and (max-width:768px) {
   section {
     width: 100%;
