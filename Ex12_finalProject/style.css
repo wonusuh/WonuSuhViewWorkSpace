@@ -97,6 +97,15 @@ nav {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  transition: 0.5s;
+}
+
+nav.active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
 }
 
 .logo {
@@ -118,6 +127,10 @@ nav {
 
 .gnb li a {
   color: white;
+}
+
+.gnb li a.active {
+  color: black;
 }
 
 .gnb li a:hover {
@@ -170,12 +183,22 @@ nav {
   padding: 50px;
 }
 
-.desc h2 {}
+.desc h2 {
+  font-size: 30px;
+}
 
-.desc p {}
+.desc p {
+  font-size: 16px;
+  line-height: 1.7em;
+}
 
 .desc a {
   color: red;
+  font-weight: bold;
+}
+
+.desc a:hover {
+  text-decoration: underline;
 }
 
 .photo {
@@ -189,7 +212,302 @@ nav {
 }
 
 /* ranking */
+.ranking {
+  background-color: #f8f8f8;
+}
+
+.ranking-content {
+  border: 2px solid blue;
+  padding: 100px 0;
+}
+
+.ranking-content h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item {
+  border: 1px solid red;
+  width: 300px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px 0 30px 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px black;
+}
+
+.up-image {
+  flex: 1;
+  width: 100%;
+  height: 300px;
+}
+
+.up-image img {
+  /* width: 100%; */
+  height: 100%;
+}
+
+.down-desc {
+  padding: 25px;
+  flex: 1;
+}
+
+.down-desc h3 {
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.down-desc p {
+  font-size: 16px;
+}
+
+.badge {
+  background-color: pink;
+  color: white;
+  padding: 2px 10px;
+  font-size: 16px;
+}
+
+.badge.good {
+  background-color: crimson;
+}
+
+.badge.must {
+  background-color: royalblue;
+}
+
+.btn-explore {
+  color: tomato;
+  font-weight: 500;
+}
+
+.btn-explore img {
+  transition: 0.5s;
+}
+
+.btn-explore:hover img {
+  transform: translateX(50px);
+}
+
 /* testimonial */
+.testimonial {
+  padding: 100px 0;
+}
+
+.testimonial-content {
+  text-align: center;
+}
+
+.testimonial-content h2 {
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.testimonial-content h2 b {}
+
+.testimonial-content hr {
+  /* 블럭요소 */
+  border: none;
+  background-color: royalblue;
+  height: 4px;
+  width: 120px;
+  margin: 30px auto;
+}
+
+.myslider {
+  border: 1px solid red;
+}
+
+.myslider div {
+  border: 1px solid green;
+  height: 300px;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client img {
+  width: 85px;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.client span {
+  font-size: 18px;
+  line-height: 1.7em;
+}
+
+.client span b {
+  display: block;
+}
+
+.comment {
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 10px;
+}
+
 /* callaction */
+.callaction {
+  height: 450px;
+  /* border: 1px solid red; */
+  background: url(images/callaction-01.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.callaction::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right bottom, rgba(128, 0, 128, 0.750), rgba(255, 255, 0, 0.750));
+}
+
+.callaction-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* position: relative; */
+  z-index: 100;
+}
+
+.callaction-heading h2 {
+  text-align: center;
+}
+
+.callaction-heading h2 span {
+  font-weight: bold;
+}
+
+.callaction-heading a {
+  background-color: navy;
+  color: red;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
 /* festival */
+.festival {
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+}
+
+.festival-heading {
+  color: white;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.festival-heading h3 {}
+
+.festival-heading h3 span {
+  font-weight: bold;
+}
+
+.festival-heading .btns {
+  padding: 20px
+}
+
+.festival-heading .btns a {
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.festival-heading .btns a:nth-child(1) {
+  background-color: gold;
+}
+
+.festival-heading .btns a:nth-child(2) {
+  background-color: white;
+  color: black;
+}
+
 /* footer */
+footer {
+  /* border: 1px solid orange; */
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.footer-content {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.footer-content ul {
+  /* border: 3px solid skyblue; */
+}
+
+.footer-content ul li a:hover {
+  text-decoration-line: underline;
+}
+
+.footer-content ul li {}
+
+.footer-content ul li a {}
+
+.community {
+  flex: 1;
+}
+
+.network {
+  flex: 1;
+}
+
+.help {
+  flex: 2;
+}
+
+/* top button */
+html {
+  scroll-behavior: smooth;
+}
+
+.test {
+  text-decoration: none;
+  color: white;
+  background-color: crimson;
+  padding: 20px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-transform: uppercase;
+}
+
+.test.active {
+  visibility: hidden;
+}
