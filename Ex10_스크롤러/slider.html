@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- <script src="slick/slick.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="slick/slick-theme.css"> -->
+  <!-- <link rel="stylesheet" href="slick/slick.css"> -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="slider.css">
+  <!-- 링크순서 중요 -->
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="myslider">
+    <div>your content 1</div>
+    <div>your content 2</div>
+    <div>your content 3</div>
+    <div>your content 4</div>
+    <div>your content 5</div>
+    <div>your content 6</div>
+    <div>your content 7</div>
+    <div>your content 8</div>
+    <div>your content 9</div>
+  </div>
+</body>
+
+</html>
+<script>
+  // $('.myslider').slick({
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 3,
+  //   dots: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 1000,
+  // });
+  $('.myslider').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+</script>

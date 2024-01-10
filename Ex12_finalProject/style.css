@@ -1,0 +1,195 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  line-height: 1.5em;
+}
+
+.container {
+  height: 100%;
+}
+
+/* common CSS */
+.inner {
+  border: 1px solid blue;
+  width: 1300px;
+  margin: auto;
+}
+
+/* header */
+header {
+  /* border: 1px solid black; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.banner {
+  /* border: 1px solid blue; */
+  background-color: black;
+  height: 40px;
+}
+
+.lnb {
+  width: 1300px;
+  /* border: 1px solid plum; */
+  margin: auto;
+  text-align: right;
+}
+
+.lnb a {
+  color: #ddd;
+  margin-left: 20px;
+}
+
+.lna a em {
+  color: rgba(128, 128, 128, 0.214);
+}
+
+nav {
+  width: 1300px;
+  /* border: 1px solid red; */
+  /* background-color: lightgrey; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {}
+
+.gnb {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnb {}
+
+.gnb li {}
+
+.gnb li a {
+  color: white;
+}
+
+.gnb li a:hover {
+  color: #222;
+}
+
+/* intro */
+.intro {
+  /* border: 1px solid red; */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(images/intro.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.heading p {
+  font-size: 22px;
+  line-height: 1.5em;
+  padding: 0 150px;
+}
+
+/* about */
+.abount-content {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.desc {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.desc h2 {}
+
+.desc p {}
+
+.desc a {
+  color: red;
+}
+
+.photo {
+  flex: 2;
+}
+
+
+.photo img {
+  width: 100%;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+}
+
+/* ranking */
+/* testimonial */
+/* callaction */
+/* festival */
+/* footer */
