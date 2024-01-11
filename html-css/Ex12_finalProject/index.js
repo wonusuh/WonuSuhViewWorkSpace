@@ -44,3 +44,13 @@ $(window).scroll(
     }
   }
 );
+
+$(window).scroll(
+  function () {
+    if ($(this).scrollTop() > 1) {
+      $('.test').removeClass('active');
+    } else {
+      $('.test').addClass('active');
+    }
+  }
+);
