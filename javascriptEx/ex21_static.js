@@ -10,7 +10,7 @@ class Student {
     console.log(`-----${this.name}-----`);
   }
   static getTotalStuCnt = () => {
-    console.log(`총 학생 `, this.count, ` 명`);
+    console.log(`총 학생 `, Student.count, ` 명`);
   }
 }
 Student.getTotalStuCnt();
