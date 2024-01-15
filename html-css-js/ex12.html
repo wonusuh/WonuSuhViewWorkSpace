@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body onload="init()">
+  <main>
+    <button class="ascending">오름차순</button>
+    <button class="decending">내림차순</button>
+    <ul></ul>
+  </main>
+</body>
+
+</html>
+<script>
+  let arr = [
+    { id: 2, name: `곰` },
+    { id: 101, name: `호랑이` },
+    { id: 4, name: `사자` },
+    { id: 29, name: `기린` },
+    { id: 10, name: `여우` },
+  ];
+  let ul = document.querySelector(`ul`);
+  function init() {
+    arr.forEach((obj) => {
+      let li = document.createElement(`li`);
+      li.textContent = `${obj.id} : ${obj.name}`;
+      ul.appendChild(li);
+    });
+  };
+  let ascending = document.querySelector(`.ascending`);
+  ascending.addEventListener(`click`, () => {
+    arr.sort((a, b) => a.id > b.id ? 1 : -1);
+    ul.innerHTML = ``;
+    for (let i = 0; i < arr.length; i += 1) {
+      let li = document.createElement(`li`);
+      li.textContent = `${arr[i].id} : ${arr[i].name}`;
+      ul.appendChild(li);
+    }
+  });
+  let decending = document.querySelector(`.decending`);
+  decending.addEventListener(`click`, () => {
+    arr.sort((a, b) => a.id > b.id ? -1 : 1);
+    ul.innerHTML = ``;
+    for (let i = 0; i < arr.length; i += 1) {
+      let li = document.createElement(`li`);
+      li.textContent = `${arr[i].id} : ${arr[i].name}`;
+      ul.appendChild(li);
+    }
+  });
+</script>
