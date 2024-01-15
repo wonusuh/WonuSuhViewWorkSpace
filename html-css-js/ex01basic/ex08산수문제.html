@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-size: 20px;
+    }
+
+    .list {}
+
+    .question {}
+
+    .question span {}
+
+    input {}
+
+    .answer {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body onload="makeQuiz()">
+  <h1>산수 문제를 풀어봅시다.</h1>
+  <h2>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요.</h2>
+  <hr>
+  <div class="list">
+  </div>
+  <div class="answer">
+    <button class="result">채점</button>
+    <div class="score"></div>
+    <button class="again">다시</button>
+  </div>
+</body>
+
+</html>
+<script>
+  let list = document.querySelector(`.list`);
+  let answer = [];
+  function makeQuiz() {
+    let max = 10;
+    let min = 1;
+    let operators = [`+`, `-`, `*`, `/`,];
+
+    for (let i = 0; i < 4; i += 1) {
+      let question = document.createElement(`div`);
+      question.classList.add(`question`);
+      let quiz = document.createElement(`span`);
+      let plus1 = parseInt((Math.random() * (max - min)) + min);
+      let plus2 = parseInt((Math.random() * (max - min)) + min);
+      console.log(`num 1 =  `, plus1);
+      console.log(`num 2 =  `, plus2);
+      if (i === 0) {
+        answer[i] = (plus1 + plus2);
+      }
+      if (i === 1) {
+        answer[i] = (plus1 - plus2);
+      }
+      if (i === 2) {
+        answer[i] = (plus1 * plus2);
+      }
+      if (i === 3) {
+        answer[i] = parseInt((plus1 / plus2));
+      }
+
+      quiz.innerHTML = `${plus1} ${operators[i]} ${plus2} = `;
+      question.appendChild(quiz);
+
+      let input = document.createElement(`input`);
+      input.type = `number`;
+
+      question.appendChild(input);
+      list.appendChild(question);
+    }
+    console.log(answer);
+  }
+
+
+  let again = document.querySelector(`.again`);
+  again.addEventListener(`click`, () => {
+    location.reload(true);
+  })
+
+  let result = document.querySelector(`.result`);
+  result.addEventListener(`click`, () => {
+    let score = document.querySelector(`.score`);
+    let myAnswerList = document.querySelectorAll(`input`);
+    let mySpan = document.querySelectorAll(`span`);
+    let myScore = 0;
+    for (let i = 0; i < answer.length; i += 1) {
+      console.log(answer[i]);
+      console.log(myAnswerList[i].value);
+      if (answer[i] == myAnswerList[i].value) {
+        myScore += 25;
+        mySpan[i].style.textDecoration = `none`;
+      } else {
+        mySpan[i].style.textDecoration = `line-through`;
+      }
+    }
+    score.textContent = myScore + ` 점`;
+  });
+</script>

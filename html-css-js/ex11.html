@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      flex: 1;
+      background-color: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      flex: 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>유저 ID : <input type="text"></div>
+  </header>
+  <section>유저 검색 결과 없음</section>
+</body>
+
+</html>
+<script>
+  const userDataList = [
+    { id: 123, name: `서원우` },
+    { id: 1021, name: `둘리` },
+    { id: 6021, name: `또치` },
+  ];
+  let input = document.querySelector(`input`);
+  let section = document.querySelector(`section`);
+  input.addEventListener(`keyup`, () => {
+    let theValue = input.value;
+    for (let i = 0; i < userDataList.length; i += 1) {
+      if (theValue == userDataList[i].id) {
+        section.innerHTML = userDataList[i].name;
+        return;
+      }
+    }
+    section.innerHTML = `유저 검색 결과 없음`;
+  });
+</script>

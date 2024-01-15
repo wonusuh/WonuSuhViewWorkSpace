@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin: 10px;
+    }
+
+    .content {
+      border: 3px solid blue;
+      width: 500px;
+      height: 250px;
+      text-align: center;
+      line-height: 250px;
+      font-size: 50px;
+      font-weight: bold;
+      color: blue;
+    }
+
+    button {
+      padding: 25px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="content"></div>
+  <button class="btn1" onclick="clicked()">네모 키우기</button>
+  <button class="btn2" onclick="clicked()">네모 움직여</button>
+  <button class="btn3" onclick="clicked()">네모 회전하기</button>
+</body>
+
+</html>
+<script>
+  const box = document.querySelector(`.box`);
+  const content = document.querySelector(`.content`);
+  box.style.transition = `2s`;
+
+  const btn1 = document.querySelector(`.btn1`);
+  let isActivated1 = false;
+  btn1.addEventListener("click", () => {
+    isActivated1 ? smaller() : bigger();
+  })
+  function bigger() {
+    box.style.width = `250px`;
+    box.style.height = `250px`;
+    btn1.textContent = "네모 작게";
+    content.textContent = `네모가 커졌다.`;
+    isActivated1 = true;
+  }
+  function smaller() {
+    box.style.width = `100px`;
+    box.style.height = `100px`;
+    btn1.textContent = "네모 키우기";
+    content.textContent = `네모가 작아졌다.`;
+    isActivated1 = false;
+  }
+
+  const btn2 = document.querySelector(`.btn2`);
+  let isActivated2 = false;
+  btn2.addEventListener("click", () => {
+    isActivated2 ? comeBack() : goRight();
+  })
+  function goRight() {
+    box.style.transform = "translateX(200px)"
+    btn2.textContent = "네모 돌아와";
+    content.textContent = `네모가 움직였다.`;
+    isActivated2 = true;
+  }
+  function comeBack() {
+    box.style.transform = "translateX(0px)"
+    btn2.textContent = "네모 움직여";
+    content.textContent = `네모가 돌아왔다.`;
+    isActivated2 = false;
+  }
+
+  const btn3 = document.querySelector(`.btn3`);
+  let isActivated3 = false;
+  btn3.addEventListener(`click`, () => {
+    isActivated3 ? rotateBack() : rotate();
+  });
+  function rotate() {
+    box.style.transform = `rotate(45deg)`;
+    btn3.textContent = `네모 되돌리기`;
+    content.textContent = `네모가 회전했다.`;
+    isActivated3 = true;
+  }
+  function rotateBack() {
+    box.style.transform = `rotate(0deg)`;
+    btn3.textContent = `네모 회전하기`;
+    content.textContent = `네모가 돌아왔다.`;
+    isActivated3 = false;
+  }
+</script>

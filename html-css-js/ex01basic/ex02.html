@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list {
+      border: 1px solid black;
+      width: 500px;
+      height: 800px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      border: 1px solid red;
+      margin: 5px;
+    }
+
+    button {
+      font-size: 1.2em;
+      background-color: royalblue;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: wheat;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn1">박스 추가</button>
+  <button class="btn2">박스 삭제</button>
+
+  <div class="list">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  const list = document.querySelector(`.list`);
+  const boxs = document.querySelectorAll(`.box`);
+  const buttons = document.querySelectorAll(`button`);
+  // console.lot(list);
+  // console.lot(newBox);
+  buttons[0].addEventListener(`click`, () => {
+    const newBox = document.createElement(`div`);
+    newBox.classList.add(`box`);
+    list.appendChild(newBox);
+  });
+  buttons[1].addEventListener(`click`, () => {
+    const box = document.querySelector(`.box`);
+    list.removeChild(box);
+    alert(`박스를 삭제했습니다.`);
+  });
+</script>
