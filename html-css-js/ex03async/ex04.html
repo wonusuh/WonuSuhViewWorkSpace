@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <button class="btn1">1초 뒤에 초기화 다시시작</button>
+  <button class="btn2">완전 종료</button>
+</body>
+
+</html>
+<script>
+  let num = 0;
+  let h1 = document.querySelector(`h1`);
+  function printNum() {
+    h1.innerHTML = num++;
+  }
+  let time = setInterval(printNum, 100);
+
+  let btn1 = document.querySelector(`.btn1`);
+  btn1.addEventListener(`click`, () => {
+    setTimeout(() => {
+      clearInterval(time);
+      num = 0;
+      time = setInterval(printNum, 100);
+    }, 1000);
+  });
+
+  let btn2 = document.querySelector(`.btn2`);
+  btn2.addEventListener(`click`, () => {
+    clearInterval(time);
+  });
+</script>

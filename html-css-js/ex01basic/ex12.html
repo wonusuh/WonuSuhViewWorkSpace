@@ -25,6 +25,7 @@
     { id: 10, name: `여우` },
   ];
   let ul = document.querySelector(`ul`);
+
   function init() {
     arr.forEach((obj) => {
       let li = document.createElement(`li`);
@@ -32,9 +33,10 @@
       ul.appendChild(li);
     });
   };
+
   let ascending = document.querySelector(`.ascending`);
   ascending.addEventListener(`click`, () => {
-    arr.sort((a, b) => a.id > b.id ? 1 : -1);
+    arr.sort((a, b) => a.name > b.name ? 1 : -1);
     ul.innerHTML = ``;
     for (let i = 0; i < arr.length; i += 1) {
       let li = document.createElement(`li`);
@@ -42,6 +44,7 @@
       ul.appendChild(li);
     }
   });
+
   let decending = document.querySelector(`.decending`);
   decending.addEventListener(`click`, () => {
     arr.sort((a, b) => a.id > b.id ? -1 : 1);

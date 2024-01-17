@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li[data-index="1"] {
+      color: red;
+    }
+
+    li[data-index="2"] {
+      color: blue;
+    }
+
+    li[data-index="3"] {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- data-사용자가원하는이름: 우리만의 태그속성 만들어줄수 있다  -->
+  <ul>
+    <li data-index="1" data-section="A"> item1 </li>
+    <li data-index="2"> item2 </li>
+    <li data-index="3"> item3 </li>
+  </ul>
+
+</body>
+
+</html>
+
+<script>
+  const index = 3;
+  const li = document.querySelector(`li[data-index='${index}']`);
+  li.style.backgroundColor = "pink";
+  li.setAttribute('data-myData', "박연미");
+
+
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      /* 80% 20% */
+      grid-template-columns: 8fr 2fr;
+      height: 100vh;
+      /* grid-gap: 20px; */
+      background-color: lightgray;
+    }
+
+    .grid {
+      /* border: 1px solid black; */
+      display: grid;
+      /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 60px;
+      background-color: pink;
+      overflow-y: scroll;
+      grid-gap: 20px;
+    }
+
+
+    .box {
+      /* border: 1px solid red; */
+      background-color: mediumpurple;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+    }
+
+    nav {
+      /* border: 1px solid blue; */
+      padding: 20px;
+    }
+
+    nav button {
+      width: 100%;
+      border: none;
+      background-color: royalblue;
+      color: #fff;
+      padding: 20px;
+      font-size: 30px;
+      border: 1px solid navy;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="box">서울</div>
+    </div>
+    <nav>
+      <button class="addBtn">추가하기 </button>
+      <button class="stopBtn">정지하기</button>
+    </nav>
+  </div>
+</body>
+
+</html>
+<script>
+  let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"];
+  let addBtn = document.querySelector(`.addBtn`);
+  let stopBtn = document.querySelector(`.stopBtn`);
+  let grid = document.querySelector(`.grid`);
+  let interval = null;
+  let num = 0;
+  let isActivated = false;
+
+  addBtn.addEventListener(`click`, addBox);
+  function addBox() {
+    if (isActivated || num == data.length) {
+      return;
+    }
+    isActivated = true;
+    interval = setInterval(() => {
+      let box = document.createElement(`div`);
+      box.classList.add(`box`);
+      box.innerHTML = data[num++];
+      grid.appendChild(box);
+      if (num == data.length) {
+        clearInterval(interval);
+        isActivated = false;
+      }
+    }, 500);
+  };
+
+  stopBtn.addEventListener(`click`, stop);
+  function stop() {
+    isActivated = false;
+    clearInterval(interval);
+  }
+</script>

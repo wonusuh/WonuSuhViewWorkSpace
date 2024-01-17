@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <div class="timer">
+      <div class="second"></div>
+    </div>
+  </main>
+</body>
+
+</html>
+<script>
+  // let num = 5;
+
+  // function printNum() {
+  //   let $second = document.querySelector(`.second`);
+  //   num = num - 0.01
+  //   $second.innerHTML = num;
+  //   console.log(`printNum 실행됨`);
+  // };
+  // let interval = setInterval(printNum, 10);
+  // setTimeout(() => {
+  //   clearInterval(interval);
+  // }, 5000);
+  let totalTime = 5 * 1000;
+  let startTime = new Date().getTime();
+  let interval = setInterval(() => {
+    let now = new Date().getTime();
+    let diff = now - startTime;
+    // 남은 시간
+    let remain = totalTime - diff;
+    // 초단위 변환
+    let remainSec = (remain / 1000).toFixed(2);
+    let label = `남은 시간 ${remainSec}초`
+
+    if (remainSec <= 0) {
+      // 타이머 종료
+      clearInterval(interval);
+      label = `5초가 지났습니다.`;
+    }
+    document.querySelector(`.second`).innerHTML = label;
+  }, 10);
+</script>
