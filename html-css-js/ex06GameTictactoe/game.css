@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: blanchedalmond;
+}
+
+header {
+  font-size: 50px;
+  background-color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 25px;
+  height: 150px;
+  width: 150px;
+  border-radius: 5%;
+  border: 1px solid navy;
+}
+
+td {
+  border: 1px solid navy;
+  border-radius: 5%;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 75px;
+  font-weight: bold;
+  color: white;
+}
+
+.winner {
+  border-radius: 25%;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  line-height: 500px;
+  background-color: tomato;
+  font-size: 25px;
+}
