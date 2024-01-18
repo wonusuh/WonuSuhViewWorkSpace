@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box1,
+    .box2 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list">
+    <div class="box1">
+      <span draggable="true">팩맨</span>
+      <img src="packman.png" alt="팩맨">
+    </div>
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  const img = document.querySelector(`img`);
+  const span = document.querySelector(`span`);
+  // const box1 = document.querySelector(`.box1`);
+  // const box2 = document.querySelector(`.box2`);
+  const list = document.querySelector(`.list`);
+
+  list.addEventListener(`dragover`, (e) => {
+    e.preventDefault();
+  });
+  list.addEventListener(`drop`, (e) => {
+    e.target.appendChild(span);
+    e.target.appendChild(img);
+  });
+</script>

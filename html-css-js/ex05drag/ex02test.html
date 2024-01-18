@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      margin-top: 10px;
+      display: flex;
+    }
+
+    .box {
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      margin-left: 10px;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    input {
+      width: 80px;
+      font-size: 20px;
+      margin: 10px 5px;
+
+    }
+
+    .trash {
+      width: 500px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 10px;
+    }
+
+    .on {
+      background-color: red;
+    }
+
+    .active {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <input type="text">
+  <div class="trash"></div>
+</body>
+
+</html>
+<script>
+  const container = document.querySelector('.container');
+  const input = document.querySelector('input');
+  const trash = document.querySelector('.trash');
+  const boxs = [...document.querySelectorAll('.box')];
+  let cnt = 1;
+
+  container.addEventListener('click', (e) => {
+    //console.log(e.target);
+    if (e.target.innerText) return;
+    e.target.innerText = cnt++;
+  })
+
+  input.addEventListener("keyup", () => {
+    let value = input.value;
+    if (value.trim() === '') return;
+    let getBox = boxs.find(box => box.innerText == value);
+    getBox && getBox.classList.add('on');
+  })
+  input.addEventListener("keydown", () => {
+    let getBox = boxs.find(box => box.classList.contains('on'));
+    getBox && getBox.classList.remove('on');
+    if (getBox) getBox.innerHTML = "";
+  });
+
+
+  // test 3
+  boxs.forEach((box) => {
+    box.setAttribute(`draggable`, `true`);
+    box.addEventListener(`dragstart`, (e) => {
+      e.dataTransfer.setData(`num`, e.target.innerText);
+    });
+  });
+
+  trash.addEventListener(`dragover`, e => {
+    e.preventDefault();
+  });
+  trash.addEventListener(`drop`, (e) => {
+    e.preventDefault();
+    let num = e.dataTransfer.getData(`num`);
+    console.log('num=', num);
+    num && trash.appendChild(boxs.find(box => box.innerText == num));
+    trash.innerHTML = ``;
+  });
+</script>
