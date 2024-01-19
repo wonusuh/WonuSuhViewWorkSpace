@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="./index1.html">페이지 1로 이동</a>
+</body>
+
+</html>
+<script>
+  localStorage.setItem(`hamster`, `햄스터`);
+  let cat = localStorage.getItem(`cat`);
+  document.write(`<h1>${cat}</h1>`);
+  let dog = sessionStorage.getItem(`dog`);
+  document.write(`<h1>${dog}</h1>`);
+</script>

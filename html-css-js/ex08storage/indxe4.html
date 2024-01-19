@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <form>
+    <input type="text">
+    <input type="submit" value="저장하기">
+    <br>
+    <br>
+    <input type="text" class="del-input">
+    <input type="submit" class="delete-btn" value="삭제하기">
+  </form>
+  <hr>
+  <div class="save"></div>
+</body>
+
+</html>
+<script>
+  const input = document.querySelector(`input[type='text']`);
+  const delInput = document.querySelector(`.del-input`);
+  const btn = document.querySelector(`input[type='submit']`);
+  const save = document.querySelector('.save');
+  const delBtn = document.querySelector('.delete-btn');
+  let inputData = [];
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    inputData.push(input.value);
+    localStorage.setItem('input_value', JSON.stringify(inputData));
+    input.value = '';
+    save.innerHTML = localStorage.getItem('input_value');
+  })
+  delBtn.addEventListener(`click`, (e) => {
+    e.preventDefault();
+    let myData = JSON.parse(localStorage.getItem(`input_value`));
+    // let target = myData.find((element) => {
+    //   element == delInput.value;
+    // });
+    // myData.delete(target);
+    // for (let i = 0; i < myData.length; i += 1) {
+    //   console.log(myData[i]);
+    //   if (delInput.value == myData[i]) {
+    //   }
+    // }
+    const condition = (element) => element == delInput.value;
+    const idx = myData.findIndex(condition);
+    console.log(idx);
+    if (idx != -1) {
+      myData.splice(idx, 1);
+      myData = JSON.stringify(myData);
+      localStorage.setItem(`input_value`, myData);
+      save.innerHTML = localStorage.getItem('input_value');
+    }
+  });
+</script>
