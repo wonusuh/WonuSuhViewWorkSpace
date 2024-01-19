@@ -33,13 +33,23 @@ class App {
       }
       console.log(theObject);
       if (theObject) {
-        setTimeout(this.showMessageWindow("", ` 삭제했습니다.`), 300);
-        this.listDom.removeChild(theObject);
-        let theIdx = this.todoList.findIndex((obj) => {
-          obj.idx == idx;
-        });
-        this.todoList.splice(theIdx, 1);
-        localStorage.setItem(`todo_list`, JSON.stringify(this.todoList));
+        // let theIdx = this.todoList.findIndex((obj) => {
+        //   obj.idx == idx;
+        // });
+        let theIdx = -1;
+        for (let i = 0; i < this.todoList.length; i += 1) {
+          if (idx == this.todoList[i].idx) {
+            theIdx = i;
+            break;
+          }
+        }
+        console.log(theIdx);
+        if (theIdx != -1) {
+          setTimeout(this.showMessageWindow("", ` 삭제했습니다.`), 300);
+          this.listDom.removeChild(theObject);
+          this.todoList.splice(theIdx, 1);
+          localStorage.setItem(`todo_list`, JSON.stringify(this.todoList));
+        }
       }
     });
   };
@@ -66,12 +76,14 @@ class App {
 
   // todo값 추가하는 것 
   makeAnObj = () => {
+    if (!this.idx) {
+      this.idx = 0;
+    }
     const obj = {
       idx: this.idx,
       title: this.titleInput.value,
       content: this.contentInput.value,
     };
-    console.log(obj.idx);
     this.todoList.push(obj);
     localStorage.setItem(`todo_list`, JSON.stringify(this.todoList));
     this.titleInput.value = ``;
