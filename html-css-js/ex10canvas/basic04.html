@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+</body>
+
+</html>
+<script>
+  const canvas = document.querySelector(`#canvas`);
+  const ctx = canvas.getContext(`2d`); // 2 dimensions
+
+  // ctx.beginPath();
+  // ctx.arc(10, 100, 10, 0, Math.PI * 2);
+  // ctx.fillStyle = `green`;
+  // ctx.fill();
+
+  // 이벤트
+  let x = 10;
+  let y = 200;
+  let interval = setInterval(() => {
+    ctx.beginPath();
+    ctx.arc(x++, y, 10, 0, Math.PI * 2);
+    ctx.fillStyle = `green`;
+    ctx.fill();
+    if (x >= canvax.width - 10) {
+      clearInterval(interval);
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }, 1)
+  canvas.addEventListener(`click`, () => {
+    clearInterval(interval);
+  });
+</script>

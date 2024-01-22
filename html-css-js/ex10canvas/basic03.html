@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+  <input id="color" type="color">
+</body>
+
+</html>
+<script>
+  const canvas = document.querySelector(`#canvas`);
+  const myColor = document.querySelector(`#color`);
+  const ctx = canvas.getContext(`2d`); // 2 dimensions
+  let color = myColor.value;
+
+  // 색상 선택하기
+  myColor.addEventListener(`change`, (event) => {
+    console.log(event.target.value);
+    color = event.target.value;
+  });
+
+  let isDrawing = false;
+  let x = 0;
+  let y = 0;
+  canvas.addEventListener(`mousedown`, (e) => {
+    isDrawing = true;
+    x = e.offsetX;
+    y = e.offsetY;
+  });
+  canvas.addEventListener(`mousemove`, (e) => {
+    if (isDrawing) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.moveTo(x, y);
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      x = e.offsetX;
+      y = e.offsetY;
+    }
+  });
+  canvas.addEventListener(`mouseup`, (e) => {
+    isDrawing = false;
+  });
+</script>
