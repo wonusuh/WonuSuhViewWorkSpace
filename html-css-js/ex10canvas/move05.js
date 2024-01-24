@@ -12,7 +12,13 @@ let player = {
   size: 50,
   color: `blue`,
   speed: 5,
+  img: null,
 };
+let playerImg = new Image();
+playerImg.src = `./img/player.png`;
+player.img = playerImg;
+let poopImg = new Image();
+poopImg.src = `./img/poop.png`;
 let enemies = [];
 makeEnemies(10);
 function draw() {
@@ -24,8 +30,9 @@ function draw() {
 
 function drawPlayer() {
   ctx.beginPath();
-  ctx.rect(player.x, player.y, player.size, player.size);
-  ctx.fillStyle = player.color;
+  // ctx.rect(player.x, player.y, player.size, player.size);
+  // ctx.fillStyle = player.color;
+  ctx.drawImage(player.img, player.x, player.y, player.size, player.size);
   ctx.fill();
   ctx.closePath();
 
@@ -55,18 +62,6 @@ function drawEnemy() {
   }
 }
 
-function movePlayer() {
-  if (key.right && player.x < canvas.width - player.size) {
-    player.x += player.speed;
-  } else if (key.down && player.y < canvas.height - player.size) {
-    player.y += player.speed;
-  } else if (key.up && player.y > 0) {
-    player.y -= player.speed;
-  } else if (key.left && player.x > 0) {
-    player.x -= player.speed;
-  }
-}
-
 window.addEventListener(`keydown`, (e) => {
   keyHandler(e, true);
 });
@@ -86,6 +81,18 @@ function keyHandler(e, value) {
     key.left = value;
   }
 }
+function movePlayer() {
+  if (key.right && player.x < canvas.width - player.size) {
+    player.x += player.speed;
+  } else if (key.down && player.y < canvas.height - player.size) {
+    player.y += player.speed;
+  } else if (key.up && player.y > 0) {
+    player.y -= player.speed;
+  } else if (key.left && player.x > 0) {
+    player.x -= player.speed;
+  }
+}
+
 
 function makeEnemies(numberOfEnemies) {
   for (let i = 0; i < numberOfEnemies; i += 1) {
@@ -95,6 +102,7 @@ function makeEnemies(numberOfEnemies) {
       size: 80,
       color: `green`,
       speed: (Math.random() * (10 - 1)) + 1,
+      img: poopImg,
     };
     enemies.push(anEnemy);
 

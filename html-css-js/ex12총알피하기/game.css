@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* 컨버스 사이즈와 동일하게 설정  */
+  width: 800px;
+  height: 400px;
+  /* 부모 박스 : relative  */
+  /* 자식 위치는 : absolute */
+  position: relative;
+
+}
+
+#canvas {
+  border: 1px dashed gray;
+  /* height: 800px; */
+  /* 부모 박스 기준으로  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.startBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  padding: 40px 80px;
+  font-size: 48px;
+  border-radius: 5px;
+  background-color: pink;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.5s;
+
+}
+
+.startBtn:hover {
+  background-color: rgb(245, 59, 90);
+  cursor: pointer;
+}
